@@ -1,33 +1,9 @@
-/* body {
+body {
   margin: 0;
 
   background-color: #FFAB91;
+  font-family: comic sans Ms, cursive, sans-serif;
 }
 ul {
   list-style: none;
 }
-.topBar {
-  background-color: #1BBCE0;
-  text-align: center;
-  width: 100%;
-  padding: 1%;
-}
-.titleText {
-  font-size: 40px
-}
-.quoteText {
-  padding: 4%;
-}
-.dateText{
-  text-align: center;
-}
-.taskBox {
-  height: 50px;
-  width: 130px;
-  background-color:#B39DDB ;
-  padding: 3%;
-  border-radius: 10px; 
-  display: grid;
-
-} */
-
