@@ -40,12 +40,5 @@ function App() {
 
 
 
-// const navBar = {
-//   fontSize: "17px",
-//   padding: "20px",
-//   display: "flex",
-//   displayDirections: "row-revrese",
-//   justifyContent: "space-between",
-// };
 
 export default App;

@@ -4,9 +4,7 @@ function Welcome(com){
     return ( 
     <>
         <h1 style={styles.titleText}>Task It</h1>
-      
-    <p style={styles.mainText}> Welcome back {profile.userName}!</p>
-        <h2 style={styles.dateText}>Tuseday, August 26 </h2>
+         <p style={styles.mainText}> Welcome back {profile.userName}!</p>
         <p style={styles.mainText}>
             "Change will not come if we wait for some other person or if we wait for
             other time. We are the ones we've been waiting for. We are the change
