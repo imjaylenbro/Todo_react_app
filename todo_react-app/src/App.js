@@ -2,6 +2,7 @@ import React from "react";
 import TodoList from "./components/Todo-items";
 import Welcome from "./components/App-com";
 import "./App.css";
+import Status from "./components/Status-bar";
 
 const list = [
   {
@@ -20,15 +21,13 @@ const list = [
     completed: true,
   },
 ];
-/* <img style={profileImg} src={profile.avatarImg} alt="hooded cartoon" /> */
 
 
 function App() {
   return (
-    <>
-   
-        <Welcome/>
-     
+    <>  
+      <Status/>
+        <Welcome/>    
       <ul>
         {list.map((tasks) => {
           return <TodoList list={tasks} />;

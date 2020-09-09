@@ -1,11 +1,10 @@
 import React from 'react';
 
-function Welcome(here){
+function Welcome(com){
     return ( 
     <>
-        <div style={styles.topBar}>
         <h1 style={styles.titleText}>Task It</h1>
-      </div>
+      
     <p style={styles.mainText}> Welcome back {profile.userName}!</p>
         <h2 style={styles.dateText}>Tuseday, August 26 </h2>
         <p style={styles.mainText}>
@@ -23,12 +22,6 @@ export default Welcome
 
 
 const styles = {
-    topBar: {
-        backgroundColor:"#1BBCE0",
-        textAlign:"center",
-        width:"100%",
-        padding:"1%",
-    },
     titleText:{
         fontSize: "40px",
         textAlign: "center",
