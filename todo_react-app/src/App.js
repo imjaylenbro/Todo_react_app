@@ -3,6 +3,13 @@ import TodoList from "./components/Todo-items";
 import Welcome from "./components/App-com";
 import "./App.css";
 import Status from "./components/Status-bar";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faPlusCircle} from '@fortawesome/free-solid-svg-icons'
+
+
+
+const plusSign = <FontAwesomeIcon icon={faPlusCircle} size="6x" />
+
 
 const list = [
   {
@@ -38,6 +45,7 @@ function App() {
           return <TodoList list={tasks} />;
         })}
       </ul>
+     <p> {plusSign} </p>
       </>
     
   );

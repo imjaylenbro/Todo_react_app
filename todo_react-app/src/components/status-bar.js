@@ -6,8 +6,8 @@ import {faCheckSquare} from '@fortawesome/free-solid-svg-icons'
 
 
 
-const element = <FontAwesomeIcon icon={faHouseUser} />
-const checkIcon = <FontAwesomeIcon size="20%" icon={faCheckSquare}/>
+const element = <FontAwesomeIcon icon={faHouseUser} size="3x" />
+const checkIcon = <FontAwesomeIcon  icon={faCheckSquare} size= "3x" />
 
 
 function Status(bar) {
@@ -23,20 +23,22 @@ function Status(bar) {
         </>
     )
 };
+
+
  
 export default Status
+
 
 let styles = {
     
     profileImg:{
-        width: "5%",
+        width: "70px",
     },
     topBar: {
         backgroundColor:"#1BBCE0",
-        height: "50px",
+        height: "100px",
         width:"100%",
-        padding:"30px",
-        marginTop: "10px",
+        padding: "20px",
       
 
     },
