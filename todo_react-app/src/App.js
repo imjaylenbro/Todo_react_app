@@ -20,6 +20,11 @@ const list = [
     description: "It's gonna help your back.",
     completed: true,
   },
+  {
+    name: "Working out",
+    description: "Gotta have that summer body",
+    completed: false,
+  }
 ];
 
 
