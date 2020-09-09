@@ -50,7 +50,6 @@ function App() {
           return <TodoList list={tasks} />;
         })}
       </ul>
-     
     </body>
   );
 }
