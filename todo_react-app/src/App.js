@@ -1,8 +1,8 @@
 import React from "react";
-import TodoList from "./components/Todo-items";
-import Welcome from "./components/App-com";
+import TodoList from "./components/Items";
+import Welcome from "./components/Text";
 import "./App.css";
-import Status from "./components/Status-bar";
+import Status from "./components/Status";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 
