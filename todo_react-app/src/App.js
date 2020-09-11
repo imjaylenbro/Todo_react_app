@@ -3,13 +3,10 @@ import TodoList from "./components/Todo-items";
 import Welcome from "./components/App-com";
 import "./App.css";
 import Status from "./components/Status-bar";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faPlusCircle} from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 
-
-
-const plusSign = <FontAwesomeIcon icon={faPlusCircle} size="6x" />
-
+const plusSign = <FontAwesomeIcon icon={faPlusCircle} size="6x" />;
 
 const list = [
   {
@@ -31,27 +28,22 @@ const list = [
     name: "Working out",
     description: "Gotta have that summer body",
     completed: false,
-  }
+  },
 ];
-
 
 function App() {
   return (
-    <>  
-      <Status/>
-        <Welcome/>    
+    <>
+      <Status />
+      <Welcome />
       <ul>
         {list.map((tasks) => {
           return <TodoList list={tasks} />;
         })}
       </ul>
-     <p> {plusSign} </p>
-      </>
-    
+      <p> {plusSign} </p>
+    </>
   );
 }
-
-
-
 
 export default App;
