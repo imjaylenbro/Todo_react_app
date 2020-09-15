@@ -48,7 +48,7 @@ class App extends React.Component {
         <Status />
         <Welcome />
         <div>
-        <input type="text"  value={this.state.newList} style={styles}/>
+        <input type="text"  onChange={this.addNewItem}  value={this.state.newList} style={styles}/>
         <button onClick={this.addTodoItem}>Add</button>
 
         </div>
