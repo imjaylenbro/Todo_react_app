@@ -4,7 +4,6 @@ import Welcome from "./components/Text";
 import "./App.css";
 import Status from "./components/Status";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 
 const plusSign = <FontAwesomeIcon icon={faPlusCircle} size="6x" />;
 
@@ -47,7 +46,8 @@ class App extends React.Component {
             return <TodoList list={tasks} />;
           })}
         </ul>
-        <p> {plusSign} </p>
+        <input type="text"/>
+        <button>Add</button>
       </>
     );
   }
