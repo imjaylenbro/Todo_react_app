@@ -8,42 +8,50 @@ import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 
 const plusSign = <FontAwesomeIcon icon={faPlusCircle} size="6x" />;
 
-const list = [
-  {
-    name: "Meditate",
-    description: "Try at least two mins",
-    completed: true,
-  },
-  {
-    name: "Grocery Shopping",
-    description: "Because you know your partner won't.",
-    completed: false,
-  },
-  {
-    name: "Yoga",
-    description: "It's gonna help your back.",
-    completed: true,
-  },
-  {
-    name: "Working out",
-    description: "Gotta have that summer body",
-    completed: false,
-  },
-];
 
-function App() {
-  return (
-    <>
-      <Status />
-      <Welcome />
-      <ul>
-        {list.map((tasks) => {
-          return <TodoList list={tasks} />;
-        })}
-      </ul>
-      <p> {plusSign} </p>
-    </>
-  );
+class App extends React.Component {
+ state = {
+    list:
+    [
+      {
+        name: "Meditate",
+        description: "Try at least two mins",
+        completed: true,
+      },
+      {
+        name: "Grocery Shopping",
+        description: "Because you know your partner won't.",
+        completed: false,
+      },
+      {
+        name: "Yoga",
+        description: "It's gonna help your back.",
+        completed: true,
+      },
+      {
+        name: "Working out",
+        description: "Gotta have that summer body",
+        completed: false,
+      },
+    ]
+}
+  
+
+  render () {
+    return (
+      <>
+        <Status />
+        <Welcome />
+        <ul>
+          {this.state.list.map((tasks) => {
+            return <TodoList list={tasks} />;
+          })}
+        </ul>
+        <p> {plusSign} </p>
+      </>
+    );
+  }
+  
 }
 
 export default App;
