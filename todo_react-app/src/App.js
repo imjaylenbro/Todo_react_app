@@ -3,15 +3,11 @@ import TodoList from "./components/Items";
 import Welcome from "./components/Text";
 import "./App.css";
 import Status from "./components/Status";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-const plusSign = <FontAwesomeIcon icon={faPlusCircle} size="6x" />;
 
 
 class App extends React.Component {
- state = {
-    list:
-    [
+  state = {
+    list: [
       {
         name: "Meditate",
         description: "Try at least two mins",
@@ -32,26 +28,43 @@ class App extends React.Component {
         description: "Gotta have that summer body",
         completed: false,
       },
-    ]
-}
-  
-
-  render () {
+    ],
+    newList: "",
+  };
+  addNewItem = (event) => {
+    this.setState({ newList: event.target.value });
+  };
+  addTodoItem = () => {
+    this.setState((state) => {
+      return {
+        list: [...state.list, { name: state.newList }],
+        newList: "",
+      };
+    });
+  };
+  render() {
     return (
       <>
         <Status />
         <Welcome />
+        <div>
+        <input type="text" onChange={this.addNewItem} value={this.state.newList} style={styles}/>
+        <button onClick={this.addTodoItem}>Add</button>
+
+        </div>
         <ul>
           {this.state.list.map((tasks) => {
             return <TodoList list={tasks} />;
           })}
         </ul>
-        <input type="text"/>
-        <button>Add</button>
+        
       </>
     );
   }
-  
 }
 
 export default App;
+
+const styles = {
+  marginLeft: "50px",
+}
