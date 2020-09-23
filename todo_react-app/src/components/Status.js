@@ -2,9 +2,12 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouseUser } from "@fortawesome/free-solid-svg-icons";
 import { faCheckSquare } from "@fortawesome/free-solid-svg-icons";
+import {faUserCircle} from "@fortawesome/free-solid-svg-icons";
+
 
 const element = <FontAwesomeIcon icon={faHouseUser} size="3x" />;
 const checkIcon = <FontAwesomeIcon icon={faCheckSquare} size="3x" />;
+const userProfile = <FontAwesomeIcon icon={faUserCircle} size="3x" />;
 
 function Status(bar) {
   return (
@@ -25,13 +28,9 @@ function Status(bar) {
           </li>
           <li>
             <p>
-              <img
-                style={styles.profileImg}
-                src={profile.avatarImg}
-                alt="hooded african-american cartoon"
-              ></img>
+              {userProfile}
               <br />
-              {profile.userName}
+              Profile
             </p>
           </li>
         </ul>
@@ -43,9 +42,7 @@ function Status(bar) {
 export default Status;
 
 let styles = {
-  profileImg: {
-    width: "70px",
-  },
+  
   topBar: {
     backgroundColor: "#1BBCE0",
     height: "100px",
@@ -62,8 +59,3 @@ let styles = {
   },
 };
 
-let profile = {
-  userName: "Jaylen",
-  avatarImg:
-    "https://1001freedownloads.s3.amazonaws.com/vector/thumb/99709/THE_HOOD_II.png",
-};

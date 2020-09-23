@@ -1,8 +1,9 @@
 import React from "react";
-import TodoList from "./components/Items";
+import TodoList from "./components/Todo";
 import Welcome from "./components/Text";
 import "./App.css";
 import Status from "./components/Status";
+
 
 
 class App extends React.Component {
@@ -10,30 +11,33 @@ class App extends React.Component {
     list: [
       {
         name: "Meditate",
-        description: "Try at least two mins",
         completed: true,
+        id: 1,
       },
       {
         name: "Grocery Shopping",
-        description: "Because you know your partner won't.",
         completed: false,
+        id: 2,
       },
       {
         name: "Yoga",
-        description: "It's gonna help your back.",
         completed: true,
+        id: 3,
       },
       {
         name: "Working out",
-        description: "Gotta have that summer body",
         completed: false,
+        id: 4,
       },
     ],
     newList: "",
   };
+  
+  // text box
   addNewItem = (event) => {
     this.setState({ newList: event.target.value });
   };
+  // button
   addTodoItem = () => {
     this.setState((state) => {
       return {
@@ -42,14 +46,16 @@ class App extends React.Component {
       };
     });
   };
+
+
   render() {
     return (
       <>
         <Status />
         <Welcome />
         <div>
-        <input type="text"  onChange={this.addNewItem}  value={this.state.newList} style={styles}/>
-        <button onClick={this.addTodoItem}>Add</button>
+        <input class="input" type="text"  onChange={this.addNewItem}  value={this.state.newList} style={styles.addText}/>
+        <button class="button" onClick={this.addTodoItem} style={styles.addButton} >Add</button>
 
         </div>
         <ul>
@@ -66,5 +72,17 @@ class App extends React.Component {
 export default App;
 
 const styles = {
-  marginLeft: "50px",
+  addText: {
+    marginLeft: "50px",
+    width: "50%",
+    height: "30px"
+
+  },
+  addButton: {
+    height:"34px",
+    marginLeft:"5px",
+    backgroundColor: "F06292",
+
+  }
+
 }
