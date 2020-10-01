@@ -4,8 +4,6 @@ import Welcome from "./components/Text";
 import "./App.css";
 import Status from "./components/Status";
 
-
-
 class App extends React.Component {
   state = {
     list: [
@@ -32,6 +30,7 @@ class App extends React.Component {
     ],
     newList: "",
   };
+
   
   // text box
   addNewItem = (event) => {
@@ -46,24 +45,62 @@ class App extends React.Component {
       };
     });
   };
-
-
+  
+  handleListDelete = (id) => {
+    this.setState((state) => {
+      const filterArray = state.list.filter((list) => {
+        if (state.list.id === id) {
+          return false;
+        } else {
+          return true;
+        }
+      });
+      return {
+        list: filterArray,
+      };
+    });
+  };
+  handleChecked = (id) => {
+    this.setState((state) => {
+      const newTask = state.list.map((list) => {
+        if (state.list.id === id) {
+          return Object.assign({}, list, {
+            completed: list.completed ? false : true,
+          });
+        }else {
+          return newTask;
+        }
+      });
+    });
+  };
   render() {
     return (
       <>
         <Status />
         <Welcome />
         <div>
-        <input class="input" type="text"  onChange={this.addNewItem}  value={this.state.newList} style={styles.addText}/>
-        <button class="button" onClick={this.addTodoItem} style={styles.addButton} >Add</button>
-
+          <input
+            class="input"
+            type="text"
+            onChange={this.addNewItem}
+            value={this.state.newList}
+            style={styles.addText}
+          />
+          <button
+            class="button"
+            onClick={this.addTodoItem}
+            style={styles.addButton}
+          >
+            Add
+          </button>
         </div>
         <ul>
           {this.state.list.map((tasks) => {
-            return <TodoList list={tasks} />;
+            return <TodoList list={tasks} 
+        
+            />;
           })}
         </ul>
-        
       </>
     );
   }
@@ -75,14 +112,11 @@ const styles = {
   addText: {
     marginLeft: "50px",
     width: "50%",
-    height: "30px"
-
+    height: "30px",
   },
   addButton: {
-    height:"34px",
-    marginLeft:"5px",
+    height: "34px",
+    marginLeft: "5px",
     backgroundColor: "F06292",
-
-  }
-
-}
+  },
+};

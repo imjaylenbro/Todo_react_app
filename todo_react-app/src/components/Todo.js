@@ -1,20 +1,27 @@
 import React from "react";
 
 function TodoList(props) {
-  
-  
-  
-  return (
-      <div style={styles.wrapper}>
-    <li style={styles.taskBox}>
-      <p style={props.list.completed ? styles.finished : styles.pending}>
-        {props.list.name}
+  const handleListDelete = () => props.onhandleListDelete(props.list.id);
 
-      <input type="checkbox" defaultChecked={props.list.completed}
-      style={styles.checkbox} checked={props.list.completed}  onChange={props.list.name} />
-      </p>
-      
-    </li>
+  const handleChecked = () => props.onhandleChcked(props.list.id);
+
+  return (
+    <div style={styles.wrapper}>
+      <li style={styles.taskBox}>
+        <p style={props.list.completed ? styles.finished : styles.pending}>
+          {props.list.name}
+
+          <input
+            type="checkbox"
+            defaultChecked={props.list.completed}
+            style={styles.checkbox}
+            checked={props.list.completed}
+            onChange={props.list.name}
+            onhandleChecked={handleChecked}
+          />
+          <button onhandleListDelete={handleListDelete}> Delete</button>
+        </p>
+      </li>
     </div>
   );
 }
@@ -28,8 +35,6 @@ const styles = {
     padding: "20px",
     margin: "10px",
     border: "5px dotted gray",
-
-   
   },
   pending: {
     fontWeight: "italic",
@@ -41,7 +46,6 @@ const styles = {
     color: "gray",
     textDecoration: "line-through",
   },
-  
 };
 
 export default TodoList;
