@@ -1,9 +1,20 @@
 import React from 'react';
 
+let profile = {
+    userName: "Jaylen",
+    avatarImg:
+      "https://1001freedownloads.s3.amazonaws.com/vector/thumb/99709/THE_HOOD_II.png",
+  };  
+
 function Welcome(com){
     return ( 
     <>
         <h1 style={styles.titleText}>Task It</h1>
+        <img className="avtarImg"
+                style={styles.profileImg}
+                src={profile.avatarImg}
+                alt="hooded african-american cartoon"
+              ></img>
          <p style={styles.mainText}> Welcome back {profile.userName}!</p>
         <p style={styles.mainText}>
             "Change will not come if we wait for some other person or if we wait for
@@ -31,12 +42,10 @@ const styles = {
     },
     dateText: {
         textAlign: "center",
-    } 
+    } ,
+    profileImg: {
+        width: "100px",
+        },
 
 };
 
-let profile = {
-    userName: "Jaylen",
-    avatarImg:
-      "https://1001freedownloads.s3.amazonaws.com/vector/thumb/99709/THE_HOOD_II.png",
-  };  

@@ -7,3 +7,15 @@ body {
 ul {
   list-style: none;
 }
+.avtarImg {
+position: relative;
+left: 260px;
+}
+.input {
+background-image: linear-gradient(to right,#ccffff, #66ffff, #00ffff);
+border: 1px dotted gray; }
+.button{
+  background-color: #00ffff;
+  border-radius: 10px;
+  border: 1px dotted gray;
+}
